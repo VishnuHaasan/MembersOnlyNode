@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+  div(style='margin-top:80px') 
+    h1.title(style='padding-left:850px') New Post 
+    div.fms.post
+      div.img-cont 
+        img(src="/images/post.jpg", alt="", srcset="")
+      form(method='POST', action='')
+        div.form-group(style='margin-top:50px') 
+          label(for='title',style='padding-right:210px') Title
+          input#title.form-control(type='text', name='title', value=(post===undefined)? '':post.title)
+        div.form-group 
+          label(for='description',style='padding-right:155px') Description 
+          input#description.form-control(type='text', name='description', value=(post===undefined)? '':post.description)
+        button.btn.btn-primary(type='submit') Create Post

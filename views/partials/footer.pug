@@ -1,0 +1,11 @@
+footer 
+  div.foot 
+    if currentUser 
+      div
+        p(style='padding-left:30px;float: left;padding-top:7px') 
+          a(href=currentUser.url) #{currentUser.username} 
+    div(style='float: right;padding-right:30px')
+      div.icon-cont(style='float:left;margin-top:5px;margin-right:5px')
+        img.anim(src="/icons/github.svg", alt="", srcset="")
+      p(style='display:inline;padding-top:7px;float:right') 
+        a(href='https://github.com/VishnuHaasan') VishnuHaasan

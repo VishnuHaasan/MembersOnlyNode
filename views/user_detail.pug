@@ -1,0 +1,9 @@
+extends layout 
+
+block content 
+  h1(style='padding-left:830px;margin-top:50px') User Detail
+  div.container 
+    p Username: #{user.username} 
+    p DisplayName: #{user.displayname} 
+    p Admin: #{(user.isAdmin===true) ? 'Yes' : 'No'}
+    p Member: #{(user.isMember===true) ? 'Yes' : 'No'}

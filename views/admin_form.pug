@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+  if !currentUser.isAdmin
+    div.form-cont 
+      h1.title(style='padding-left:800px;margin-top:50px') Become a Admin
+      div.fms.admin
+        div.img-cont 
+          img(src="/images/admin.jpg", alt="", srcset="")
+        form(method='POST', action='') 
+          div.form-group 
+            label(for='memberpassword',style='padding-right:115px') Admin Password: 
+            input#adminpassword.form-control(type='text', name='adminpassword')
+          button.btn.btn-primary(type='submit') Become an Admin
+  else 
+    div(style='text-align: center')
+      h2(style='margin-top:20px') You are already an Admin

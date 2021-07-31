@@ -1,0 +1,27 @@
+extends layout 
+
+block content
+  div(style='margin-top:150px')
+    for post in posts 
+      div.post-group 
+        p.post-title(style='color:red;font-size:20px') #{post.title} 
+        div.post-description 
+          p(style='padding: 10px') #{post.description} 
+        div.post-bottom 
+          if currentUser && currentUser.isMember
+            p #{post.user.displayname}
+          else 
+            p Anonymous
+          if currentUser && currentUser.isAdmin 
+            a(href=post.delurl)
+              button.del-btn Delete
+          div 
+            div.icon-cont(style='float:left;padding-bottom:5px')
+              img(src="/icons/date.svg", alt="", srcset="")
+            p(style='display:inline;float:right') #{post.date}
+          div 
+            div.icon-cont(style='float:left;padding-bottom:5px')
+              img(src="/icons/time.svg", alt="", srcset="")
+            p(style='display:inline') #{post.time}
+    
+          

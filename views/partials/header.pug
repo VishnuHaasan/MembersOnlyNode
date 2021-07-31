@@ -1,0 +1,33 @@
+header
+  nav.navbar 
+    div.title 
+      p(style='font-size=20px;')
+        a(href='/posts',style='text-decoration:none;color:white;font-size:20px') OnlyForMembers
+      img.anim(src="/icons/title.svg", alt="", srcset="") 
+    div.subnavbar 
+      if currentUser
+        div 
+          img.anim(src="/icons/post.svg", alt="", srcset="")
+          p(style='display: inline') 
+            a(href='/post/create') Create a Post
+        div 
+          img.anim(src="/icons/member.svg", alt="", srcset="")
+          p(style='display: inline') 
+            a(href='/member') Become a member 
+        div
+          img.anim(src='/icons/admin.svg', alt="", srcset="")
+          p(style='display: inline')
+            a(href='/admin') Become an admin  
+        div 
+          img.anim(src="/icons/login.svg", alt="", srcset="")
+          p(style='display: inline')
+            a(href='/logout') Log Out 
+      else 
+        div
+          img.anim(src="/icons/signup.svg", alt="", srcset="") 
+          p(style='display: inline') 
+            a(href='/user/create') Sign Up
+        div   
+          img.anim(src="/icons/login.svg", alt="", srcset="") 
+          p(style='display: inline') 
+            a(href='/login') Log In 

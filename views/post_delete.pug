@@ -1,0 +1,11 @@
+extends layout 
+
+block content  
+  div.form-cont
+    h1(style='margin-top:50px;padding-left:825px') Delete Post
+    div.fms.post-del
+      p(style='margin-top:30px;font-size:15px') 
+        a(href=post.url) Do you really want to delete this post?
+      form(method='POST', action='')
+        div.form-group 
+          button.btn.btn-primary(type='submit') Delete Post

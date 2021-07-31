@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+  if !currentUser.isMember
+    div.form-cont 
+      h1.title(style='padding-left:800px;margin-top:50px') Become a Member
+      div.fms.member
+        div.img-cont 
+          img(src="/images/member.png", alt="", srcset="")
+        form(method='POST', action='') 
+          div.form-group 
+            label(for='memberpassword',style='padding-right:110px') Member Password: 
+            input#memberpassword.form-control(type='text', name='memberpassword')
+          button.btn.btn-primary(type='submit') Become a Member
+  else 
+    div(style='text-align: center')
+      h2(style='margin-top:20px') You are already a Member

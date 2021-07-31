@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+  div.form-cont 
+    h1.title(style='padding-left:800px;margin-top:50px') Register/SignUp 
+    div.fms.signup
+      div.img-cont 
+        img(src="/images/signup.jpg", alt="", srcset="")
+      form(method='POST', action='')
+        div.form-group 
+          label(for='username') Username 
+          input#username.form-control(type='text', name='username',  required='true', value=(user===undefined)? '' : user.username)
+        div.form-group 
+          label(for='password') Password 
+          input#password.form-control(type='text', name='password',  required='true')
+        div.form-group 
+          label(for='confirmpassword',style='padding-right:110px') Confirm Password 
+          input#confirmpassword.form-control(type='text', name='confirmpassword', required='true')
+        div.form-group 
+          label(for='displayname',style='padding-right:155px') Displayname
+          input#displayname.form-control(type='text', name='displayname',  required='true', value=(user===undefined)? '' : user.displayname)
+        button.btn.btn-primary(type='submit') Register
+  if errors 
+    ul 
+      for error in errors 
+        li!= error.msg

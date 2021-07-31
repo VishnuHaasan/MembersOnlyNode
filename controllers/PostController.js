@@ -44,7 +44,7 @@ exports.create_post = [body('description', 'Description is required').trim().isL
         return next(err);
       }
       else{
-        res.redirect('/posts');
+        res.redirect('/');
       }
     });
   }
@@ -53,7 +53,7 @@ exports.create_post = [body('description', 'Description is required').trim().isL
 exports.delete_get = (req, res, next) => {
   authenticateUser(req.user, res);
   if(!req.user.isAdmin){
-    res.redirect('/posts');
+    res.redirect('/');
   }
   else{
     Post.findById(req.params.id)
@@ -63,7 +63,7 @@ exports.delete_get = (req, res, next) => {
         return next(err);
       }
       if(thepost==null){
-        res.redirect('/posts');
+        res.redirect('/');
       }
       else{
         res.render('post_delete', {post: thepost});
@@ -76,14 +76,14 @@ exports.delete_get = (req, res, next) => {
 exports.delete_post = (req, res, next) => {
   authenticateUser(req.user, res);
   if(!req.user.isAdmin){
-    res.redirect('/posts');
+    res.redirect('/');
   }
   else{
     Post.findByIdAndRemove(req.params.id, function(err){
       if(err){
         return next(err);
       }
-      res.redirect('/posts');
+      res.redirect('/');
     })
   }
 }

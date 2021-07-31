@@ -30,7 +30,7 @@ exports.admin_post = [body('adminpassword', 'Password is incorrect').trim().cust
         return next(err);
       }
       else{
-        res.redirect('/posts');
+        res.redirect('/');
       }
     })
   }
@@ -66,7 +66,7 @@ exports.member_post = [body('memberpassword', 'Password is incorrect').trim().cu
         return next(err);
       }
       else{
-        res.redirect('/posts');
+        res.redirect('/');
       }
     })
   }
